@@ -55,6 +55,7 @@ static const char* const TENS[] = {
   "ninety"
 };
 
+static const char* STR_OH_WORD = "oh";
 static const char* STR_OH_TICK = "o'";
 static const char* STR_CLOCK = "clock";
 static const char* STR_NOON = "noon";
@@ -168,7 +169,8 @@ void minute_to_formal_words(int minutes, char *first_word, char *second_word) {
     return;
   }
   if (minutes < 10) {
-    strcat(first_word, ONES[minutes%10]);
+      strcat(first_word, STR_OH_WORD);
+      strcat(first_word, ONES[minutes%10]);
     return;
   }
   if (minutes > 10 && minutes < 20) {
